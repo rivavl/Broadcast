@@ -21,9 +21,17 @@ class MyReceiver : BroadcastReceiver() {
             }
             Intent.ACTION_BATTERY_LOW -> {
                 Toast.makeText(context, "Low Battery", Toast.LENGTH_SHORT).show()
-
+            }
+            ACTION_CLICKED -> {
+                val counter = intent.getIntExtra(EXTRA_COUNT, 0)
+                Toast.makeText(context, "Clicked $counter times", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    companion object {
+        const val ACTION_CLICKED = "clicked"
+        const val EXTRA_COUNT = "count"
     }
 }
 
