@@ -26,6 +26,10 @@ class MyReceiver : BroadcastReceiver() {
                 val counter = intent.getIntExtra(EXTRA_COUNT, 0)
                 Toast.makeText(context, "Clicked $counter times", Toast.LENGTH_SHORT).show()
             }
+            "loaded" -> {
+                val percent = intent.getIntExtra("percent", 0)
+                Toast.makeText(context, "Loaded $percent", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
